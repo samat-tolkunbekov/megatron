@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Insider Logger</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <script src="./popup.js"></script>
+</head>
+<body>
+    <section class="st-header">
+        <img src="./icons/64.png" alt="Logo">
+        <h1>Insider Logger</h1>
+    </section>
+    <section id="st-toggle-container" class="st-container">
+        <div class="st-insider-container">
+            <h4>Insider</h4>
+            <label class="st-switch">
+                <input id="st-insider-logs" type="checkbox">
+                <span class="st-slider round"></span>
+            </label>
+            <div class="st-style-container">
+                <p>Background color</p>
+                <input type="color" id="st-insider-background" value="#106910">
+                <p>Text color</p>
+                <input type="color" id="st-insider-text" value="#ffffff">
+            </div>
+        </div>
+        <div class="st-ga-container">
+            <h4>GA</h4>
+            <label class="st-switch">
+                <input id="st-ga-logs" type="checkbox">
+                <span class="st-slider round"></span>
+            </label>
+            <div class="st-style-container">
+                <p>Background color</p>
+                <input type="color" id="st-ga-background" value="#387CE8">
+                <p>Text color</p>
+                <input type="color" id="st-ga-text" value="#ffffff">
+            </div>
+        </div>
+        <div class="st-srules-container">
+            <h4>System Rules</h4>
+            <label class="st-switch">
+                <input id="st-srules-logs" type="checkbox">
+                <span class="st-slider round"></span>
+            </label>
+            <div class="st-style-container">
+                <p>Background color</p>
+                <input type="color" id="st-srules-background" value="#387CE8">
+                <p>Text color</p>
+                <input type="color" id="st-srules-text" value="#ffffff">
+            </div>
+        </div>
+    </section>
+    <section class="st-footer">
+        <div class="st-footer-container"></div>
+        <p>For feedbacks and bugs report, please contact Samat Tolkunbekov</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Insider Logger",
+    "description": "For Debugging Purposes",
+    "version": "1.2",
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_start"
+    }],
+    "icons": {
+        "32": "icons/32.png",
+        "64": "icons/64.png"
+    },
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "browser_action": {
+        "default_icon": {
+            "32": "icons/32.png",
+            "64": "icons/64.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "declarativeContent",
+        "tabs",
+        "activeTab",
+        "storage",
+        "<all_urls>"
+    ],
+    "web_accessible_resources": ["system-rules.js", "content.js"]
+}
