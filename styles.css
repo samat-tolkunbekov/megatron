@@ -30,7 +30,9 @@ body {
     margin: 0;
 }
 
-.st-style-container p, .st-style-container input {
+.st-style-container p,
+.st-style-container input,
+.st-style-container button {
     display: inline-block;
     margin: .1rem 0;
 }
@@ -105,4 +107,17 @@ input:checked + .st-slider:before {
   
 .st-slider.round:before {
     border-radius: 50%;
+}
+
+.st-srules-trigger {
+    padding: .4rem .8rem;
+    background: #ccc;
+    border: none;
+    border-radius: 3px;
+    color: black;
+}
+
+.st-srules-trigger:hover {
+    background: #FF8A65;
+    color: white;
 }

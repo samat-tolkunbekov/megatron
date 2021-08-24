@@ -13,11 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
         'st-srules-background': storageGet['st-srules-background'] || '#7f0bf3',
         'st-srules-text': storageGet['st-srules-text'] || '#FFFFFF'
     };
+    const manualTrigger = {
+        id: 'st-srules-trigger',
+        checkbox: 'st-srules-logs'
+    };
 
     const init = () => {
         setToggle();
         setEvents();
-        sendStatus();
+        sendStatus(storageData, storageName);
     };
 
     const setToggle = () => {
@@ -36,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById(container).addEventListener('change', event => {
             storeToggle(event.target.id);
         });
+
+        document.getElementById(manualTrigger.id).addEventListener('click', () => {
+            document.getElementById(manualTrigger.checkbox).checked = true;
+            storageData[manualTrigger.checkbox] = true;
+
+            updateStatus()
+            sendStatus(true, manualTrigger);
+        })
     };
 
     const storeToggle = (element) => {
@@ -45,17 +57,21 @@ document.addEventListener('DOMContentLoaded', () => {
             storageData[element] = currentElement.type === 'checkbox' ?
                 currentElement.checked : currentElement.value;
 
-            localStorage.setItem(storageName, JSON.stringify(storageData));
-            sendStatus();
+            updateStatus();
         }
     };
 
-    const sendStatus = () => {
+    const updateStatus = () => {
+        localStorage.setItem(storageName, JSON.stringify(storageData));
+        sendStatus(storageData, storageName);
+    };
+
+    const sendStatus = (status, name) => {
         chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
             chrome.tabs.sendMessage(
                 tabs[0].id, {
-                    status: storageData,
-                    name: storageName
+                    status: status,
+                    name: name
                 });
         });
     };
