@@ -7,9 +7,9 @@
 # You can also use email addresses if you prefer.
 # Each line should have min. 2 codeowner as fallback
 
-* @stolkunbekov @metecetinkaya
-
 megatron/* @stolkunbekov
+
+* @stolkunbekov @metecetinkaya
 
 # @stolkunbekov owns any files in the CODEOWNERS file
 
