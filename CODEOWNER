@@ -1,0 +1,14 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+# https://blog.github.com/2017-07-06-introducing-code-owners/
+
+# Order is important. The last matching pattern has the most precedence.
+# will be requested to review.
+# You can also use email addresses if you prefer.
+# Each line should have min. 2 codeowner as fallback
+
+* @stolkunbekov @metecetinkaya
+
+# @stolkunbekov owns any files in the CODEOWNERS file
+
+CODEOWNERS @stolkunbekov @metecetinkaya
